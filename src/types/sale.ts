@@ -1,12 +1,9 @@
-import { Seller } from "./seller"
-
 export type Sale = {
     id: number;
-    visited: number;
-    deals: number;
-    amount: number;
-    date: string;
-    seller: Seller;
+    data: string;
+    eventos_hora: number;
+    horas_uso: string;
+    pontuacao: string;
 }
 
 export type SalePage = {
@@ -27,7 +24,6 @@ export type SaleSum = {
 }
 
 export type SaleSuccess = {
-    sellerName: string;
-    visited: number;
-    deals: number;
+    data: string;
+    eventos_hora: number;
 }

@@ -8,8 +8,8 @@ const Home = () => {
       <NavBar />
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-4">Painel de Vendas</h1>
-          <p className="lead">Analise o desempenho das vendas por diferentes perspectivas</p>
+          <h1 className="display-4">Infográfico CPAP</h1>
+          <p className="lead">Analise o rendimento diário do uso do CPAP por diferentes perspectivas</p>
           <hr />
           <Link className="btn btn-primary btn-lg" to="/dashboard">
             Acessar painel
