@@ -12,9 +12,13 @@ const Dashboard = () => {
                 <h1 className="text-primary py-3">Painel de Eventos/hora</h1>
 
                 <div className="row px-3">
-                    <div className="col-sm-30">
+                    <div className="col-sm-6">
                         <h5 className="text-center text-secondary">Registros diários (IAH)</h5>
                         <BarChart />
+                    </div>
+                    <div className="col-sm-6">
+                        <h5 className="text-center text-secondary">IAH médio por mês</h5>
+                        <DonutChart />
                     </div>
                 </div>
 

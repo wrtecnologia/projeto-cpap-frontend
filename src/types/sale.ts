@@ -19,8 +19,8 @@ export type SalePage = {
 }
 
 export type SaleSum = {
-    sellerName: string;
-    sum: number;
+    data: string;
+    eventos_hora: number;
 }
 
 export type SaleSuccess = {
