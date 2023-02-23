@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Chart from 'react-apexcharts';
 import { SaleSum } from 'types/sale';
+import { round } from 'utils/format';
 import { BASE_URL } from 'utils/requests';
 
 type SeriesData = {
@@ -36,7 +37,7 @@ const DonutChart = () => {
 			.then((response) => {
 				const data = response.data as SaleSum[];
 				const myLabels = data.map(x => x.data);
-				const mySeries = data.map(x => x.eventos_hora);
+				const mySeries = data.map(x => round(x.eventos_hora, 2));
 
 				setChartData({
 					labels: {
@@ -65,7 +66,7 @@ const DonutChart = () => {
 		  },
 
 		fill: {
-			colors: ['#2d3e70']
+			colors: ['#004762']
 		  },
 	  
 	}
