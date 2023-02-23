@@ -31,7 +31,7 @@ const BarChart = () => {
   });
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/logs/success-by-seller`).then((response) => {
+    axios.get(`${BASE_URL}/cpap/eventos-mes`).then((response) => {
       const data = response.data as SaleSuccess[];
       const myLabels = data.map((x) => x.data);
       const mySeries = data.map((x) => x.eventos_hora);
@@ -53,17 +53,28 @@ const BarChart = () => {
   const options = {
     plotOptions: {
       bar: {
-        horizontal: false,
+        horizontal: true,
       },
     },
+
+    fill: {
+      colors: ['#029999']
+    },
+    
+    dataLabels: {
+      style: {
+        colors: ['#ffffff']
+      }
+    }
   };
+  
 
   return (
     <Chart 
       options={{...options, xaxis: chartData.labels}}
       series={chartData.series}
       type="bar"
-      height="500"
+      height="800"
     />
   );
 };

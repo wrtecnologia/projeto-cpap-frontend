@@ -17,7 +17,7 @@ const DataTable = () => {
     });
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/logs?minDate=2023-01-05&maxDate=2023-12-31&page=0&size=100`)
+        axios.get(`${BASE_URL}/cpap?minDate=2023-01-05&maxDate=2023-12-31&page=0&size=100`)
         .then(response => {
                 setPage(response.data);
             });
