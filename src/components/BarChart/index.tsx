@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { SaleSuccess } from "types/sale";
+import { round } from "utils/format";
 import { BASE_URL } from "utils/requests";
 
 type SeriesData = {
@@ -30,7 +31,7 @@ const BarChart = () => {
   });
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/logs`).then((response) => {
+    axios.get(`${BASE_URL}/logs/success-by-seller`).then((response) => {
       const data = response.data as SaleSuccess[];
       const myLabels = data.map((x) => x.data);
       const mySeries = data.map((x) => x.eventos_hora);
@@ -41,7 +42,7 @@ const BarChart = () => {
         },
         series: [
           {
-            name: "Eventos",
+            name: "Eventos/hora",
             data: mySeries,
           },
         ],
@@ -58,11 +59,11 @@ const BarChart = () => {
   };
 
   return (
-    <Chart
-      options={{ ...options, xaxis: chartData.labels }}
+    <Chart 
+      options={{...options, xaxis: chartData.labels}}
       series={chartData.series}
       type="bar"
-      height="300"
+      height="500"
     />
   );
 };
